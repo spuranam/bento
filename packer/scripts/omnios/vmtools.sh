@@ -28,3 +28,7 @@ if [ $PACKER_BUILDER_TYPE == 'vmware' ]; then
   rm -rf /tmp/vmfusion-archive
   rm -f solaris.iso
 fi
+
+if [ $PACKER_BUILDER_TYPE == 'parallels' ]; then
+  echo "Nothing to do for Parallels."
+fi

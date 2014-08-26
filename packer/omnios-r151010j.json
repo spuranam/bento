@@ -113,6 +113,67 @@
         "memsize": "1024",
         "numvcpus": "1"
       }
+    },
+    {
+      "boot_command": [
+        "<enter><wait10><wait5>",
+        "1<enter><wait10>",
+        "<wait10>",
+        "<f2><wait>",
+        "<f2><wait>",
+        "<f2><wait>",
+        "<bs><bs><bs><bs><bs><bs><bs>omnios-vagrant<enter>",
+        "<f2><wait>",
+        "<f2><wait>",
+        "<f2><wait>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<f8><wait>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "<wait10><wait10><wait10><wait10><wait10><wait10>",
+        "root<enter><wait><enter><wait5>",
+        "passwd<enter><wait>",
+        "vagrant<enter><wait>",
+        "vagrant<enter><wait>",
+        "ipadm create-if e1000g0<enter><wait>",
+        "ipadm create-addr -T dhcp e1000g0/v4<enter><wait>",
+        "echo 'nameserver 8.8.8.8' > /etc/resolv.conf<enter><wait>",
+        "cp /etc/nsswitch.dns /etc/nsswitch.conf<enter><wait>",
+        "sed -i -e 's/PermitRootLogin no/PermitRootLogin yes/' /etc/ssh/sshd_config<enter><wait>",
+        "svcadm restart ssh<enter><wait>"
+      ],
+      "boot_wait": "30s",
+      "disk_size": 40960,
+      "guest_os_type": "opensolaris",
+      "hard_drive_interface": "ide",
+      "iso_checksum": "bc3f4c0d29a5da75174de62da00294e5ef826b5e",
+      "iso_checksum_type": "sha1",
+      "iso_url": "{{user `mirror`}}/OmniOS_Text_r151010j.iso",
+      "output_directory": "packer-omnios-r151010j-parallels",
+      "shutdown_command": "/usr/sbin/shutdown -g 0 -y -i 5",
+      "ssh_password": "vagrant",
+      "ssh_port": 22,
+      "ssh_username": "root",
+      "type": "parallels-iso",
+      "parallels_tools_flavor": "other",
+      "prlctl": [
+        [
+          "set",
+          "{{.Name}}",
+          "--memsize",
+          "1024"
+        ],
+        [
+          "set",
+          "{{.Name}}",
+          "--cpus",
+          "1"
+        ]
+      ],
+      "prlctl_version_file": ".prlctl_version",
+      "vm_name": "packer-omnios-r151010j"
     }
   ],
   "post-processors": [
