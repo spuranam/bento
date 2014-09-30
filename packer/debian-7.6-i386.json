@@ -107,9 +107,9 @@
       "disk_size": 40960,
       "guest_os_type": "debian",
       "http_directory": "http",
-      "iso_checksum": "24e8e0ac74a12848e2601f3bb1821c52fc9049c5",
+      "iso_checksum": "ac7abf86a6077a242ac367aef3d4f18a8232098b",
       "iso_checksum_type": "sha1",
-      "iso_url": "{{user `mirror`}}/7.5.0/i386/iso-cd/debian-7.5.0-i386-CD-1.iso",
+      "iso_url": "{{user `mirror`}}/7.6.0/i386/iso-cd/debian-7.6.0-i386-CD-1.iso",
       "ssh_username": "vagrant",
       "ssh_password": "vagrant",
       "ssh_port": 22,
@@ -117,8 +117,8 @@
       "shutdown_command": "echo 'vagrant'|sudo -S /sbin/shutdown -hP now",
       "parallels_tools_flavor": "lin",
       "prlctl_version_file": ".prlctl_version",
-      "vm_name": "packer-debian-7.5-i386",
-      "output_directory": "packer-debian-7.5-i386-parallels",
+      "vm_name": "packer-debian-7.6-i386",
+      "output_directory": "packer-debian-7.6-i386-parallels",
       "prlctl": [
         [ "set", "{{.Name}}", "--memsize", "384" ],
         [ "set", "{{.Name}}", "--cpus", "1" ]
